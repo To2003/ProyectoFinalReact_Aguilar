@@ -1,0 +1,20 @@
+.itemListCont{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    height: 480px;
+    margin: 8px;
+}
+

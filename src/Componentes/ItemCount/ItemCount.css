@@ -1,0 +1,12 @@
+.clickers {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content: center;
+    margin-bottom: 8px;
+}
+
+.cantidad {
+    font-size: 24px;
+    font-weight: 800;
+}
