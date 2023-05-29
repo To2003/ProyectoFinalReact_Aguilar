@@ -23,7 +23,7 @@ export const ItemDetailCont = () => {
             {isLoading ? 
                 <h2>Cargando...</h2>
                 :
-                <ItemDetail {... producto} />
+                <ItemDetail producto={producto} />
             }
         </>
     )
