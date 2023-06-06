@@ -14,9 +14,9 @@ let productos = [
     {categoria: 'Remeras', name: "Luffy G5", stock:50, precio: 10000, foto: "/OnePeaceLuffyG5.jpeg"},
 
     //gorras
-    {categoria: 'Gorras', name: "Naruto", stock:0, precio: 10000, foto: "https://tse4.mm.bing.net/th?id=OIP.1HfesFkdbBSRRyrRCJccCgHaFk&pid=Api&P=0&h=180"},
-    {categoria: 'Gorras', name: "Totoro", stock:0, precio: 10000, foto: "https://http2.mlstatic.com/totoro-cosplay-gorra-d-moda-anime-kawaii-envio-gratis-totoro-D_NQ_NP_716702-MLM31225458545_062019-F.jpg"},
-    {categoria: 'Gorras', name: "Dragon Ball", stock:0, precio: 10000, foto: "https://images-na.ssl-images-amazon.com/images/I/51PjRAB8pUL._AC_UL1000_.jpg"}
+    {categoria: 'Gorras', name: "Naruto", stock:50, precio: 10000, foto: "https://tse4.mm.bing.net/th?id=OIP.1HfesFkdbBSRRyrRCJccCgHaFk&pid=Api&P=0&h=180"},
+    {categoria: 'Gorras', name: "Totoro", stock:50, precio: 10000, foto: "https://http2.mlstatic.com/totoro-cosplay-gorra-d-moda-anime-kawaii-envio-gratis-totoro-D_NQ_NP_716702-MLM31225458545_062019-F.jpg"},
+    {categoria: 'Gorras', name: "Dragon Ball", stock:50, precio: 10000, foto: "https://images-na.ssl-images-amazon.com/images/I/51PjRAB8pUL._AC_UL1000_.jpg"}
 ]
 
 export const categorias = [
