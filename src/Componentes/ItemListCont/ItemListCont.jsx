@@ -19,27 +19,16 @@ export const ItemListCont = ({greeting}) => {
     useEffect(() =>{
         const dbFirestore = getFirestore()
         const queryCollection = collection(dbFirestore, 'productos')
+        const queryCollectionFilt = !categoria ? queryCollection : query(
+            queryCollection, 
+            where('categoria','==', categoria),
+            )
 
-        if (!categoria) {
-    
-            getDocs(queryCollection)
-                .then(res => setProductos(  res.docs.map(producto => ( { id: producto.id, ...producto.data() } )) ))
-                .catch(err => console.log(err))
-                .finally(() => setIsLoading(false))
-        }else{
-    
-            const queryCollectionFilt = query(
-                queryCollection, 
-                where('categoria','==', categoria),
-                // orderBy('price', 'asc'),
-                // limit(1)
-                )
-    
             getDocs(queryCollectionFilt)
                 .then(res => setProductos(  res.docs.map(producto => ( { id: producto.id, ...producto.data() } )) ))
                 .catch(err => console.log(err))
                 .finally(() => setIsLoading(false))
-        }
+        
     }, [categoria])
 
 

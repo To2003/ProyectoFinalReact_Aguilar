@@ -2,6 +2,8 @@ import { Link, NavLink } from "react-router-dom"
 import { CartWidget } from "../CartWidget/CartWidget"
 import { Titulo } from "./Titulo"
 import './NavBar.css'
+import { categorias } from "../../util/mFetch"
+
 
 
 export const NavBar = () => {
@@ -33,17 +35,8 @@ export const NavBar = () => {
                             </a>
 
                             <ul className="dropdown-menu">
-                                <li>
-                                    <NavLink to='/categoria/Gorras' className="dropdown-item" >
-                                        Gorras
-                                    </NavLink>
-                                </li>
 
-                                <li>
-                                    <NavLink to='/categoria/Remeras' className="dropdown-item" >
-                                        Remeras
-                                    </NavLink>
-                                </li>
+                                    {categorias.map(categoria => <li><NavLink key={categoria.id} to={`/categoria/${categoria.categoria}`} className="dropdown-item">{categoria.name}</NavLink></li>)}
 
                                 <li><hr className="dropdown-divider" /></li>
 
