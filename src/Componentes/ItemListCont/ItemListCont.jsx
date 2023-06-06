@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { collection, getDocs, getFirestore, limit, orderBy, query, where } from 'firebase/firestore'
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
 import { ItemList } from "../ItemList/ItemList"
 import { Filter } from "../Filter/Filter"
 import { LoadingSpinner } from "../../Hooks/Loading"
@@ -46,7 +46,7 @@ export const ItemListCont = ({greeting}) => {
                         
                             ? <ItemList productos={productos}/>
                             :
-                            productos.filter( producto => producto.name.toLowerCase().includes(filterState.toLowerCase()) ).map(({id, categoria, name, stock, precio, foto}) => 
+                            productos.filter( producto => producto.name.toLowerCase().includes(filterState.toLowerCase()) ).map(({id, categoria, name, stock, foto}) => 
                             <div key={id} className="card">
                                 <img src={foto} alt="imagen-card" className="card-img-top" />
                                 
