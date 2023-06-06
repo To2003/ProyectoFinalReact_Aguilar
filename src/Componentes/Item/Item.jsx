@@ -12,7 +12,6 @@ export const Item = ({producto: {id, categoria, name, stock, precio, foto}}) => 
                 <h4>{name}</h4>
                 <label>Categoria: {categoria}</label>
                 <label className={ (stock === 0) ?  "alert alert-danger" : "alert alert-success"}>{ stock === 0 ? 'No Hay Stock' : 'Hay Stock'}</label>
-                <label>Precio: {precio}</label>
             </div>
 
             <div className="card-footer">

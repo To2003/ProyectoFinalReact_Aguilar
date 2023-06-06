@@ -2,3 +2,15 @@
     display: flex;
     justify-content: center;
 }
+
+.card {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.cards {
+    width: 300px;
+}

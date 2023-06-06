@@ -3,7 +3,27 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 32px;
 }
+
+.custom-search {
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 16px;
+    color: #1b1b1b;
+    background-color: #f8f8f8;
+    transition: border-color 0.3s ease;
+    width: 50%;
+    margin: 32px 32px 32px 0
+}
+
+.custom-search:focus {
+    outline: none;
+    border-color: black;
+    box-shadow: 0 0 5px rgba(102, 102, 102, 0.5);
+}
+
 
 .card-body {
     display: flex;

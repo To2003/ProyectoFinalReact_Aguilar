@@ -26,13 +26,13 @@ export const ItemDetail = ({producto}) => {
             <div className="ItemDetail">
 
                 <div className="ItemDetailCard">
-                    <div className="card w-50" >
-                            <img src={producto.foto} alt="imagen-card" className="card-img-top" />
+                    <div className="card" >
+                            <img src={producto.foto} alt="imagen-card" className="cards" />
                         <div className="card-body">
-                            <h4>{producto.name}</h4>
-                            <label>Categoria: {producto.categoria}</label>
-                            <label>Stock: {producto.stock}</label>
-                            <label>Precio: ${producto.precio}</label>
+                            <h2>{producto.name}</h2>
+                            <h4>Categoria: {producto.categoria}</h4>
+                            <h5>Stock: {producto.stock}</h5>
+                            <h5>Precio: ${producto.precio}</h5>
                         </div>
 
                         <div className="card-footer">

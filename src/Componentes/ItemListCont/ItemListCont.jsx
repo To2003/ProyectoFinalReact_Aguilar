@@ -47,7 +47,7 @@ export const ItemListCont = ({greeting}) => {
         return(
         <div>
             {filterState}
-            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={filterState} onChange={handleFilterChange}/>
+            <input className="custom-search" type="search" placeholder="Search" aria-label="Search" value={filterState} onChange={handleFilterChange}/>
             <button className="btn btn-outline-success" type="submit">Search</button>
 
             <div className="itemListCont">
@@ -66,8 +66,7 @@ export const ItemListCont = ({greeting}) => {
                                 <div className="card-body">
                                     <h4>{name}</h4>
                                     <label>Categoria: {categoria}</label>
-                                    <label>{ stock === 0 ? 'No Hay Stock' : 'Hay Stock'}</label>
-                                    <label>Precio: {precio}</label>
+                                    <label className={ (stock === 0) ?  "alert alert-danger" : "alert alert-success"}>{ stock === 0 ? 'No Hay Stock' : 'Hay Stock'}</label>
                                 </div>
 
                                 <div className="card-footer">
