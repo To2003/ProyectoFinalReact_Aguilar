@@ -7,7 +7,7 @@ export const CartWidget = () => {
     return (
         <div className="cart-widget">
             {cantTotal()}
-            <img src="../public/CartWidget.png" alt="CartWidget" height="32px"/>
+            <img src="../public/CartWidget.jpeg" alt="CartWidget" height="32px"/>
         </div>
     )
 }
