@@ -10,9 +10,7 @@ import "./ItemListCont.css"
 
 export const ItemListCont = ({greeting}) => {
     const [productos, setProductos] = useState([])
-    const [producto, setProducto] = useState({})
     const [ isLoading, setIsLoading] = useState(true)
-    const [meGusta, setMeGusta] = useState(true)
 
     const { categoria } = useParams()
 

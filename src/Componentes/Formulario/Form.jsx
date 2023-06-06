@@ -1,11 +1,7 @@
-export const Form = ({handleOnChange, formData, errors, validateForm}) => {
+export const Form = ({handleOnChange, formData, errors}) => {
 
     const handleOnSubmit= (evt) =>{
             evt.preventDefault();
-
-        if (validateForm()) {
-            console.log("enviando", formData);
-        }
     }
 
     return(

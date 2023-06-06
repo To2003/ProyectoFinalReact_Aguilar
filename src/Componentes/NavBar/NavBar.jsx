@@ -1,8 +1,8 @@
 import { Link, NavLink } from "react-router-dom"
 import { CartWidget } from "../CartWidget/CartWidget"
 import { Titulo } from "./Titulo"
-import './NavBar.css'
 import { categorias } from "../../util/mFetch"
+import './NavBar.css'
 
 
 
@@ -26,7 +26,7 @@ export const NavBar = () => {
                         </li>
 
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Formulario</a>
+                            <a className="nav-link" href="/form">Formulario</a>
                         </li>
 
                         <li className="nav-item dropdown">

@@ -1,5 +1,5 @@
 import { useCartContext } from "../../context/CartContext"
-import { addDoc, collection, doc, getFirestore, updateDoc, writeBatch } from 'firebase/firestore'
+import { addDoc, collection, getFirestore } from 'firebase/firestore'
 import { Link} from "react-router-dom"
 import { useState } from "react"
 import swal from 'sweetalert'
@@ -18,8 +18,6 @@ export const CartCont = () => {
     })
 
     const handleOnChange = (evt)=>{
-        console.log('nombre del input',evt.target.name)
-        console.log('valor del input',evt.target.value)
         setDataForm({
             ...dataForm,
             [evt.target.name]: evt.target.value
@@ -58,7 +56,6 @@ export const CartCont = () => {
         const ordersCollection = collection(dbFirestore, 'orders')
         addDoc(ordersCollection, order)
         .then(resp => {
-            console.log(resp);
             setId(resp.id)
             swal({
                 title: "Compra Realizada!!",
@@ -108,7 +105,7 @@ export const CartCont = () => {
                             required
                         /> 
                         <input 
-                            type='text' 
+                            type='number' 
                             name="phone" 
                             onChange={handleOnChange}
                             value={dataForm.phone} 
@@ -116,7 +113,7 @@ export const CartCont = () => {
                             required
                         /> 
                         <input 
-                            type='text' 
+                            type='email' 
                             name="email" 
                             onChange={handleOnChange}
                             value={dataForm.email} 

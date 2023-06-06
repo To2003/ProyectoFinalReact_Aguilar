@@ -12,14 +12,12 @@ export const ItemDetail = ({producto}) => {
 
     const [isCant, setIsCant] = useState(false)
 
-    const {addToCart, cartList} = useCartContext()
+    const {addToCart} = useCartContext()
 
     const onAdd = (cantidad) => {
         addToCart( { ...producto, cantidad } )
         setIsCant(true)
     }
-
-    //console.log(cartList)
 
     return (
         <>

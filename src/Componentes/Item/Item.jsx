@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import "./Item.css"
 
-export const Item = ({producto: {id, categoria, name, stock, precio, foto}}) => {
+export const Item = ({producto: {id, categoria, name, stock, foto}}) => {
     return (
         <div key={id} className="card w-25" >
             <Link to={`/detail/${id}`}>

@@ -6,9 +6,9 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import { CartCont } from './Componentes/CartCont/CartCont';
 import { CartContextProvider} from './context/CartContext';
 import { ToastContainer } from 'react-toastify';
+import { LogoInst } from './Componentes/LogoFloat/LogoInst';
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { LogoInst } from './Componentes/LogoFloat/LogoInst';
 
 function App() {
   
@@ -22,8 +22,8 @@ function App() {
         <Route path="/categoria/:categoria" element={<ItemListCont />} />
         <Route path="/detail/:pid" element={<ItemDetailCont />} />
         <Route path="/cart" element={<CartCont />} />
+        <Route path='/form' element={<Formulario />}/>
       </Routes>
-      {/*<Formulario />*/}
       <ToastContainer />
       <LogoInst />
     </Router>

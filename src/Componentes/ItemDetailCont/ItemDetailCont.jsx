@@ -21,9 +21,6 @@ useEffect(() => {
 
     }, [])
 
-    console.log(productos)
-
-
     return (
         <>
             {isLoading ? 

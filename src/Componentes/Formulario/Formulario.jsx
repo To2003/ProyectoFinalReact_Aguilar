@@ -21,9 +21,12 @@ export function Formulario (){
     }
 
     return (
+        <>
+            <h2> Formulario - Coming Soon </h2>
             <FormWhitValidation 
                 formData={formData} 
                 handleOnChange={handleOnChange}
             />
+        </>
     )
 }
