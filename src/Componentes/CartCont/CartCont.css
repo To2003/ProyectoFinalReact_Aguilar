@@ -1,0 +1,12 @@
+.cartItem {
+    border: 1px solid grey;
+    margin: 8px auto;
+    background-color: gray;
+    max-width: 60%;
+}
+
+.cartItem img {
+    margin: 8px 8px ;
+    width: 50%;
+    
+}

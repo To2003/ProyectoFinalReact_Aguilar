@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom"
 import { CartWidget } from "../CartWidget/CartWidget"
 import { Titulo } from "./Titulo"
+import './NavBar.css'
 
 
 export const NavBar = () => {
@@ -14,7 +15,7 @@ export const NavBar = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <div className="collapse navbar-collapse divNavBar" id="navbarSupportedContent">
 
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
@@ -23,7 +24,7 @@ export const NavBar = () => {
                         </li>
 
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Links</a>
+                            <a className="nav-link" href="#">Formulario</a>
                         </li>
 
                         <li className="nav-item dropdown">
@@ -64,12 +65,9 @@ export const NavBar = () => {
 
                     </ul>
 
-                    <form className="d-flex" role="search">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-success" type="submit">Search</button>
-                    </form>
                 </div>
             </div>
         </nav>
     )
 }
+

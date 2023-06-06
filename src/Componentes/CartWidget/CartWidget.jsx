@@ -1,10 +1,12 @@
+import { useCartContext } from "../../context/CartContext"
 import "./CartWidget.css"
 
 
 export const CartWidget = () => {
+    const {cantTotal} = useCartContext()
     return (
         <div className="cart-widget">
-            3
+            {cantTotal()}
             <img src="/public/CartWidget.png" alt="CartWidget" height="32px"/>
         </div>
     )

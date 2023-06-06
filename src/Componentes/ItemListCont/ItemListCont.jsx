@@ -1,38 +1,47 @@
 import { useState, useEffect } from "react"
-import { mFetch } from "../../util/mFetch"
-import { Filter } from "../Filter/Filter"
 import { useParams } from "react-router-dom"
+import { collection, getDocs, getFirestore, limit, orderBy, query, where } from 'firebase/firestore'
 import { ItemList } from "../ItemList/ItemList"
+import { Filter } from "../Filter/Filter"
+import { LoadingSpinner } from "../../Hooks/Loading"
+
 
 import "./ItemListCont.css"
 
 export const ItemListCont = ({greeting}) => {
     const [productos, setProductos] = useState([])
+    const [producto, setProducto] = useState({})
     const [ isLoading, setIsLoading] = useState(true)
+    const [meGusta, setMeGusta] = useState(true)
 
     const { categoria } = useParams()
 
     useEffect(() =>{
+        const dbFirestore = getFirestore()
+        const queryCollection = collection(dbFirestore, 'productos')
 
         if (!categoria) {
-            mFetch()
-
-            .then( resultado => {
-                setProductos(resultado)
-            })
-
-            .catch( error => console.log(error))
-            .finally(() => setIsLoading(false))
-
+    
+            getDocs(queryCollection)
+                .then(res => setProductos(  res.docs.map(producto => ( { id: producto.id, ...producto.data() } )) ))
+                .catch(err => console.log(err))
+                .finally(() => setIsLoading(false))
         }else{
-            mFetch()
-            .then( resultado => {
-                setProductos(resultado.filter(producto => producto.categoria === categoria))
-            })
-            .catch( error => console.log(error))
-            .finally(() => setIsLoading(false))
+    
+            const queryCollectionFilt = query(
+                queryCollection, 
+                where('categoria','==', categoria),
+                // orderBy('price', 'asc'),
+                // limit(1)
+                )
+    
+            getDocs(queryCollectionFilt)
+                .then(res => setProductos(  res.docs.map(producto => ( { id: producto.id, ...producto.data() } )) ))
+                .catch(err => console.log(err))
+                .finally(() => setIsLoading(false))
         }
     }, [categoria])
+
 
     const handleProductFiltered = ({ filterState, handleFilterChange }) => {
         return(
@@ -43,7 +52,7 @@ export const ItemListCont = ({greeting}) => {
 
             <div className="itemListCont">
                 { isLoading ? 
-                    <h2> Cargando...</h2>
+                    <LoadingSpinner />
                 : 
                     <>
                         {filterState === "" 
@@ -51,13 +60,13 @@ export const ItemListCont = ({greeting}) => {
                             ? <ItemList productos={productos}/>
                             :
                             productos.filter( producto => producto.name.toLowerCase().includes(filterState.toLowerCase()) ).map(({id, categoria, name, stock, precio, foto}) => 
-                            <div key={id} className="card w-25" >
+                            <div key={id} className="card">
                                 <img src={foto} alt="imagen-card" className="card-img-top" />
                                 
                                 <div className="card-body">
                                     <h4>{name}</h4>
                                     <label>Categoria: {categoria}</label>
-                                    <label>Stock: {stock}</label>
+                                    <label>{ stock === 0 ? 'No Hay Stock' : 'Hay Stock'}</label>
                                     <label>Precio: {precio}</label>
                                 </div>
 
@@ -74,7 +83,7 @@ export const ItemListCont = ({greeting}) => {
         )
     }
     return (
-        <div>
+        <div className="body">
             <h2>{greeting}</h2>
                 <Filter>
                     { handleProductFiltered }

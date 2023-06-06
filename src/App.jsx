@@ -5,9 +5,10 @@ import { ItemDetailCont } from './Componentes/ItemDetailCont/ItemDetailCont';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import { CartCont } from './Componentes/CartCont/CartCont';
 import { CartContextProvider} from './context/CartContext';
-
+import { ToastContainer } from 'react-toastify';
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { LogoInst } from './Componentes/LogoFloat/LogoInst';
 
 function App() {
   
@@ -22,7 +23,9 @@ function App() {
         <Route path="/detail/:pid" element={<ItemDetailCont />} />
         <Route path="/cart" element={<CartCont />} />
       </Routes>
-      <Formulario />
+      {/*<Formulario />*/}
+      <ToastContainer />
+      <LogoInst />
     </Router>
   </CartContextProvider>
 

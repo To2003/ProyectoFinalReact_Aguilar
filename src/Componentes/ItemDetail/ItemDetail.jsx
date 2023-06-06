@@ -8,6 +8,8 @@ import { useCartContext } from "../../context/CartContext"
 import './ItemDetail.css'
 
 export const ItemDetail = ({producto}) => {
+
+
     const [isCant, setIsCant] = useState(false)
 
     const {addToCart, cartList} = useCartContext()
