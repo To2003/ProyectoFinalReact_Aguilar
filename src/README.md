@@ -2,6 +2,8 @@
 
 Este es un proyecto de una aplicación web de eCommerce desarrollada con React.
 
+Netlify: https://rad-creponne-8bd216.netlify.app
+
 ## Descripción
 
 La aplicación es un catálogo de productos donde los usuarios pueden explorar diferentes categorías, ver detalles de los productos y agregarlos al carrito de compras. También cuenta con un sistema de búsqueda y filtrado de productos.

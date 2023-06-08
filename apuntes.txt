@@ -1,0 +1,32 @@
+// Traer todos los productos
+
+        useEffect(() => {
+            const dbFirestore = getFirestore()
+            const queryCollection = collection(dbFirestore, 'productos')
+    
+            getDocs(queryCollection)
+                .then(res => setProductos(res.docs.map(producto => ( {id: producto.id, ...producto.data()} ) ) ) )
+                .catch(err => console.log(err))
+                .finally(() => setIsLoading(false))
+    
+    }, [])
+
+    //traer productos filtrados
+
+    useEffect(() => {
+        const dbFirestore = getFirestore()
+        const queryCollection = collection(dbFirestore, 'productos')
+
+        const queryCollectionFilt = query(
+            queryCollection, 
+            where('precio','==', 10000),
+            limit(1)
+            orderBy('')
+
+            )
+
+        getDocs(queryCollectionFilt)
+            .then(res => setProductos(res.docs.map(producto => ( {id: producto.id, ...producto.data()} ) ) ) )
+            .catch(err => console.log(err))
+            .finally(() => setIsLoading(false))
+    }, [])
